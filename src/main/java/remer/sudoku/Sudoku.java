@@ -82,7 +82,8 @@ public class Sudoku
                         {
                             if (boxSeen[num])
                             {
-                                addUniqueError(errors, "Box " + (boxRow * 3 + boxCol + 1) + " has duplicate value " + num);
+                                addUniqueError(errors, "Box " + (boxRow * 3 + boxCol + 1)
+                                        + " has duplicate value " + num);
                             } else
                             {
                                 boxSeen[num] = true;
