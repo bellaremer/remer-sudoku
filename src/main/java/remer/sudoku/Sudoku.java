@@ -16,43 +16,58 @@ public class Sudoku
     public List<String> getErrors()
     {
         List<String> errors = new ArrayList<>();
+        checkRowDuplicates(errors);
+        checkColumnDuplicates(errors);
+        checkBoxDuplicates(errors);
+        return errors;
+    }
 
-        // Check for row and column duplicates
+    private void checkRowDuplicates(List<String> errors)
+    {
         for (int i = 0; i < 9; i++)
         {
-            boolean[] row = new boolean[10];
-            boolean[] col = new boolean[10];
+            boolean[] seen = new boolean[10];
             for (int j = 0; j < 9; j++)
             {
-
-                // Check rows
-                if (board[i][j] != 0)
+                int num = board[i][j];
+                if (num != 0)
                 {
-                    if (row[board[i][j]])
+                    if (seen[num])
                     {
-                        errors.add("Row " + i + " duplicate " + board[i][j]);
+                        addUniqueError(errors, "Row " + (i + 1) + " has duplicate value " + num);
                     } else
                     {
-                        row[board[i][j]] = true;
+                        seen[num] = true;
                     }
                 }
-
-                // Check columns
-                if (board[j][i] != 0)
-                {
-                    if (col[board[j][i]])
-                    {
-                        errors.add("Column " + i + " duplicate " + board[j][i]);
-                    } else
-                    {
-                        col[board[j][i]] = true;
-                    }
-                }
-
             }
         }
+    }
 
-        // Check for 3x3 box duplicates
+    private void checkColumnDuplicates(List<String> errors)
+    {
+        for (int i = 0; i < 9; i++)
+        {
+            boolean[] seen = new boolean[10];
+            for (int j = 0; j < 9; j++)
+            {
+                int num = board[j][i];
+                if (num != 0)
+                {
+                    if (seen[num])
+                    {
+                        addUniqueError(errors, "Column " + (i + 1) + " has duplicate value " + num);
+                    } else
+                    {
+                        seen[num] = true;
+                    }
+                }
+            }
+        }
+    }
+
+    private void checkBoxDuplicates(List<String> errors)
+    {
         for (int boxRow = 0; boxRow < 3; boxRow++)
         {
             for (int boxCol = 0; boxCol < 3; boxCol++)
@@ -67,7 +82,7 @@ public class Sudoku
                         {
                             if (boxSeen[num])
                             {
-                                errors.add("Box " + (boxRow * 3 + boxCol) + " duplicate " + num);
+                                addUniqueError(errors, "Box " + (boxRow * 3 + boxCol + 1) + " has duplicate value " + num);
                             } else
                             {
                                 boxSeen[num] = true;
@@ -77,7 +92,14 @@ public class Sudoku
                 }
             }
         }
+    }
 
-        return errors;
+    private void addUniqueError(List<String> errors, String error)
+    {
+        // Check if the error is already in the list before adding
+        if (!errors.contains(error))
+        {
+            errors.add(error);
+        }
     }
 }
