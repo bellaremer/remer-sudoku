@@ -1,5 +1,6 @@
+package remer.sudoku;
+
 import org.junit.jupiter.api.Test;
-import remer.sudoku.Sudoku;
 
 import java.util.List;
 
