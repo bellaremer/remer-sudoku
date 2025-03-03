@@ -10,6 +10,10 @@ public class Sudoku
     // Constructor to initialize the Sudoku board
     public Sudoku(int[][] board)
     {
+        if (board.length != 9 || board[0].length != 9)
+        {
+            throw new IllegalArgumentException("The Sudoku board must be 9 rows by 9 columns.");
+        }
         this.board = board;
     }
 
@@ -30,15 +34,15 @@ public class Sudoku
             for (int j = 0; j < 9; j++)
             {
                 int num = board[i][j];
-                if (num != 0)
+                if (num <= 0 || num > 9)
                 {
-                    if (seen[num])
-                    {
-                        addUniqueError(errors, "Row " + (i + 1) + " has duplicate value " + num);
-                    } else
-                    {
-                        seen[num] = true;
-                    }
+                    addUniqueError(errors, "Row " + (i + 1) + " has invalid value " + num);
+                } else if (seen[num])
+                {
+                    addUniqueError(errors, "Row " + (i + 1) + " has duplicate value " + num);
+                } else
+                {
+                    seen[num] = true;
                 }
             }
         }
@@ -52,15 +56,15 @@ public class Sudoku
             for (int j = 0; j < 9; j++)
             {
                 int num = board[j][i];
-                if (num != 0)
+                if (num <= 0 || num > 9)
                 {
-                    if (seen[num])
-                    {
-                        addUniqueError(errors, "Column " + (i + 1) + " has duplicate value " + num);
-                    } else
-                    {
-                        seen[num] = true;
-                    }
+                    addUniqueError(errors, "Column " + (i + 1) + " has invalid value " + num);
+                } else if (seen[num])
+                {
+                    addUniqueError(errors, "Column " + (i + 1) + " has duplicate value " + num);
+                } else
+                {
+                    seen[num] = true;
                 }
             }
         }
@@ -72,24 +76,28 @@ public class Sudoku
         {
             for (int boxCol = 0; boxCol < 3; boxCol++)
             {
-                boolean[] boxSeen = new boolean[10];
-                for (int i = 0; i < 3; i++)
+                checkSquareDuplicates(boxRow, boxCol, errors);
+            }
+        }
+    }
+
+    private void checkSquareDuplicates(int boxRow, int boxCol, List<String> errors)
+    {
+        boolean[] boxSeen = new boolean[10];
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                int num = board[boxRow * 3 + i][boxCol * 3 + j];
+                if (num <= 0 || num > 9)
                 {
-                    for (int j = 0; j < 3; j++)
-                    {
-                        int num = board[boxRow * 3 + i][boxCol * 3 + j];
-                        if (num != 0)
-                        {
-                            if (boxSeen[num])
-                            {
-                                addUniqueError(errors, "Box " + (boxRow * 3 + boxCol + 1)
-                                        + " has duplicate value " + num);
-                            } else
-                            {
-                                boxSeen[num] = true;
-                            }
-                        }
-                    }
+                    addUniqueError(errors, "Box " + (boxRow * 3 + boxCol + 1) + " has invalid value " + num);
+                } else if (boxSeen[num])
+                {
+                    addUniqueError(errors, "Box " + (boxRow * 3 + boxCol + 1) + " has duplicate value " + num);
+                } else
+                {
+                    boxSeen[num] = true;
                 }
             }
         }
@@ -97,7 +105,6 @@ public class Sudoku
 
     private void addUniqueError(List<String> errors, String error)
     {
-        // Check if the error is already in the list before adding
         if (!errors.contains(error))
         {
             errors.add(error);
