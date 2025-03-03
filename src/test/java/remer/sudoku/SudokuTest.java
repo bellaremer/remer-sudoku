@@ -10,8 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class SudokuTest
 {
     @Test
-    public void getErrors()
-    {
+    public void getErrors() {
         int[][] exampleBoardWithErrors = {
                 {5, 3, 4, 6, 7, 8, 9, 1, 2}, // No change
                 {6, 7, 2, 1, 9, 5, 3, 4, 8}, // No change
@@ -30,6 +29,13 @@ public class SudokuTest
         // Assert the number of errors
         assertEquals(6, errors.size(), "Expected 6 errors for the provided Sudoku board.");
 
+        // Assert specific error messages
+        assertTrue(errors.contains("Row 8 has duplicate value 2"), "Expected error for duplicate 2 in row 8.");
+        assertTrue(errors.contains("Row 9 has duplicate value 8"), "Expected error for duplicate 8 in row 9.");
+        assertTrue(errors.contains("Column 8 has duplicate value 2"), "Expected error for duplicate 2 in column 8.");
+        assertTrue(errors.contains("Column 9 has duplicate value 8"), "Expected error for duplicate 8 in column 9.");
+        assertTrue(errors.contains("Box 8 has duplicate value 2"), "Expected error for duplicate 2 in box 8.");
+        assertTrue(errors.contains("Box 9 has duplicate value 8"), "Expected error for duplicate 8 in box 9.");
     }
 
         @Test

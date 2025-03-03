@@ -83,7 +83,7 @@ public class Sudoku
 
     private void checkSquareDuplicates(int boxRow, int boxCol, List<String> errors)
     {
-        boolean[] boxSeen = new boolean[10];
+        boolean[] seen = new boolean[10];
         for (int i = 0; i < 3; i++)
         {
             for (int j = 0; j < 3; j++)
@@ -92,12 +92,12 @@ public class Sudoku
                 if (num <= 0 || num > 9)
                 {
                     addUniqueError(errors, "Box " + (boxRow * 3 + boxCol + 1) + " has invalid value " + num);
-                } else if (boxSeen[num])
+                } else if (seen[num])
                 {
                     addUniqueError(errors, "Box " + (boxRow * 3 + boxCol + 1) + " has duplicate value " + num);
                 } else
                 {
-                    boxSeen[num] = true;
+                    seen[num] = true;
                 }
             }
         }
