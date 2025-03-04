@@ -10,7 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class SudokuTest
 {
     @Test
-    public void getErrors() {
+    public void getErrors()
+    {
         int[][] exampleBoardWithErrors = {
                 {5, 3, 4, 6, 7, 8, 9, 1, 2}, // No change
                 {6, 7, 2, 1, 9, 5, 3, 4, 8}, // No change
@@ -29,18 +30,18 @@ public class SudokuTest
         // Assert the number of errors
         assertEquals(6, errors.size(), "Expected 6 errors for the provided Sudoku board.");
 
-        // Assert specific error messages
-        assertTrue(errors.contains("Row 8 has duplicate value 2"), "Expected error for duplicate 2 in row 8.");
-        assertTrue(errors.contains("Row 9 has duplicate value 8"), "Expected error for duplicate 8 in row 9.");
-        assertTrue(errors.contains("Column 8 has duplicate value 2"), "Expected error for duplicate 2 in column 8.");
-        assertTrue(errors.contains("Column 9 has duplicate value 8"), "Expected error for duplicate 8 in column 9.");
-        assertTrue(errors.contains("Box 8 has duplicate value 2"), "Expected error for duplicate 2 in box 8.");
-        assertTrue(errors.contains("Box 9 has duplicate value 8"), "Expected error for duplicate 8 in box 9.");
+        // Assert each specific error
+        assertEquals("Row 8 has duplicate value 2", errors.get(0), "First error should be about duplicate 2 in row 8.");
+        assertEquals("Row 9 has duplicate value 8", errors.get(1), "Second error should be about duplicate 8 in row 9.");
+        assertEquals("Column 3 has duplicate value 2", errors.get(2), "Third error should be about duplicate 2 in column 3.");
+        assertEquals("Column 9 has duplicate value 8", errors.get(3), "Fourth error should be about duplicate 8 in column 9.");
+        assertEquals("Box 7 has duplicate value 2", errors.get(4), "Fifth error should be about duplicate 2 in box 7.");
+        assertEquals("Box 9 has duplicate value 8", errors.get(5), "Sixth error should be about duplicate 8 in box 9.");
     }
 
-        @Test
+    @Test
     public void correctBoard()
-        {
+    {
         int[][] correctBoard = {
                 {5, 3, 4, 6, 7, 8, 9, 1, 2},
                 {6, 7, 2, 1, 9, 5, 3, 4, 8},
