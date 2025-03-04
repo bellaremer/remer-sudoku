@@ -31,12 +31,18 @@ public class SudokuTest
         assertEquals(6, errors.size(), "Expected 6 errors for the provided Sudoku board.");
 
         // Assert each specific error
-        assertEquals("Row 8 has duplicate value 2", errors.get(0), "First error should be about duplicate 2 in row 8.");
-        assertEquals("Row 9 has duplicate value 8", errors.get(1), "Second error should be about duplicate 8 in row 9.");
-        assertEquals("Column 3 has duplicate value 2", errors.get(2), "Third error should be about duplicate 2 in column 3.");
-        assertEquals("Column 9 has duplicate value 8", errors.get(3), "Fourth error should be about duplicate 8 in column 9.");
-        assertEquals("Box 7 has duplicate value 2", errors.get(4), "Fifth error should be about duplicate 2 in box 7.");
-        assertEquals("Box 9 has duplicate value 8", errors.get(5), "Sixth error should be about duplicate 8 in box 9.");
+        assertEquals("Row 8 has duplicate value 2", errors.get(0),
+                "First error should be about duplicate 2 in row 8.");
+        assertEquals("Row 9 has duplicate value 8", errors.get(1),
+                "Second error should be about duplicate 8 in row 9.");
+        assertEquals("Column 3 has duplicate value 2", errors.get(2),
+                "Third error should be about duplicate 2 in column 3.");
+        assertEquals("Column 9 has duplicate value 8", errors.get(3),
+                "Fourth error should be about duplicate 8 in column 9.");
+        assertEquals("Box 7 has duplicate value 2", errors.get(4),
+                "Fifth error should be about duplicate 2 in box 7.");
+        assertEquals("Box 9 has duplicate value 8", errors.get(5),
+                "Sixth error should be about duplicate 8 in box 9.");
     }
 
     @Test
