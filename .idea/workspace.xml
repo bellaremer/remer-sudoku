@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf6d4da1-b3b7-4577-989c-f8d18ba917ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/remer/sudoku/GUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/remer/sudoku/SudokuErrors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/remer/sudoku/Sudoku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/remer/sudoku/Sudoku.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/remer/sudoku/SudokuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/remer/sudoku/SudokuTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/remer/sudoku/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/remer/sudoku/SudokuGui.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +43,7 @@
     "Gradle.SudokuTest.getErrors.executor": "Run",
     "Gradle.remer-sudoku [:remer.sudoku.GUI.main()].executor": "Run",
     "Gradle.remer-sudoku [:remer.sudoku.Sudoku.main()].executor": "Run",
+    "Gradle.remer-sudoku [:remer.sudoku.SudokuGui.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "gui",
     "kotlin-language-version-configured": "true",
@@ -113,7 +111,7 @@
       <workItem from="1741028964163" duration="976000" />
       <workItem from="1741094378499" duration="606000" />
       <workItem from="1741096073789" duration="265000" />
-      <workItem from="1741544991243" duration="1223000" />
+      <workItem from="1741544991243" duration="2023000" />
     </task>
     <servers />
   </component>

@@ -6,13 +6,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class GUI
+public class SudokuGui
 {
     private JFrame frame;
     private JTextField[][] cells;
     private JButton checkButton;
 
-    public GUI(int[][] board)
+    public SudokuGui(int[][] board)
     {
         // Create the main frame
         frame = new JFrame("Sudoku");
@@ -104,7 +104,8 @@ public class GUI
             highlightErrors(new Sudoku(board).getErrors());
         } else
         {
-            JOptionPane.showMessageDialog(frame, "Please fill in all cells with numbers 1-9.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Please fill in all cells with numbers 1-9.",
+                    "Input Error", JOptionPane.ERROR_MESSAGE);
             resetHighlighting();
         }
     }
@@ -146,6 +147,6 @@ public class GUI
         };
 
         // Create the Sudoku GUI
-        SwingUtilities.invokeLater(() -> new GUI(board));
+        SwingUtilities.invokeLater(() -> new SudokuGui(board));
     }
 }
