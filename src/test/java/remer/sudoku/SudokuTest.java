@@ -25,7 +25,7 @@ public class SudokuTest
         };
 
         Sudoku sudokuWithErrors = new Sudoku(exampleBoardWithErrors);
-        List<String> errors = sudokuWithErrors.getErrors();
+        List<SudokuErrors> errors = sudokuWithErrors.getErrors();
 
         // Assert the number of errors
         assertEquals(6, errors.size(), "Expected 6 errors for the provided Sudoku board.");

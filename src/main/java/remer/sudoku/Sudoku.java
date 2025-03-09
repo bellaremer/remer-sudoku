@@ -8,8 +8,7 @@ public class Sudoku
     private final int[][] board;
 
     // Constructor to initialize the Sudoku board
-    public Sudoku(int[][] board)
-    {
+    public Sudoku(int[][] board) {
         if (board.length != 9 || board[0].length != 9)
         {
             throw new IllegalArgumentException("The Sudoku board must be 9 rows by 9 columns.");
@@ -17,60 +16,62 @@ public class Sudoku
         this.board = board;
     }
 
-    public List<String> getErrors()
+    // Method to get a list of errors in the Sudoku board
+    public List<SudokuErrors> getErrors()
     {
-        List<String> errors = new ArrayList<>();
+        List<SudokuErrors> errors = new ArrayList<>();
         checkRowDuplicates(errors);
         checkColumnDuplicates(errors);
         checkBoxDuplicates(errors);
         return errors;
     }
 
-    private void checkRowDuplicates(List<String> errors)
+    // Check for duplicates in each row
+    private void checkRowDuplicates(List<SudokuErrors> errors)
     {
-        for (int i = 0; i < 9; i++)
-        {
-            boolean[] seen = new boolean[10];
+        for (int i = 0; i < 9; i++) {
+            boolean[] seen = new boolean[10]; // To track seen numbers (1-9)
             for (int j = 0; j < 9; j++)
             {
                 int num = board[i][j];
-                if (num <= 0 || num > 9)
+                if (num > 0 && num <= 9)
                 {
-                    addUniqueError(errors, "Row " + (i + 1) + " has invalid value " + num);
-                } else if (seen[num])
-                {
-                    addUniqueError(errors, "Row " + (i + 1) + " has duplicate value " + num);
-                } else
-                {
-                    seen[num] = true;
+                    if (seen[num]) {
+                        addUniqueError(errors, i, j, num);
+                    } else
+                    {
+                        seen[num] = true;
+                    }
                 }
             }
         }
     }
 
-    private void checkColumnDuplicates(List<String> errors)
+    // Check for duplicates in each column
+    private void checkColumnDuplicates(List<SudokuErrors> errors)
     {
         for (int i = 0; i < 9; i++)
         {
-            boolean[] seen = new boolean[10];
+            boolean[] seen = new boolean[10]; // To track seen numbers (1-9)
             for (int j = 0; j < 9; j++)
             {
                 int num = board[j][i];
-                if (num <= 0 || num > 9)
+                if (num > 0 && num <= 9)
                 {
-                    addUniqueError(errors, "Column " + (i + 1) + " has invalid value " + num);
-                } else if (seen[num])
-                {
-                    addUniqueError(errors, "Column " + (i + 1) + " has duplicate value " + num);
-                } else
-                {
-                    seen[num] = true;
+                    if (seen[num])
+                    {
+                        addUniqueError(errors, j, i, num);
+                    } else
+                    {
+                        seen[num] = true;
+                    }
                 }
             }
         }
     }
 
-    private void checkBoxDuplicates(List<String> errors)
+    // Check for duplicates in each 3x3 box
+    private void checkBoxDuplicates(List<SudokuErrors> errors)
     {
         for (int boxRow = 0; boxRow < 3; boxRow++)
         {
@@ -81,33 +82,35 @@ public class Sudoku
         }
     }
 
-    private void checkSquareDuplicates(int boxRow, int boxCol, List<String> errors)
+    // Check for duplicates in a specific 3x3 box
+    private void checkSquareDuplicates(int boxRow, int boxCol, List<SudokuErrors> errors)
     {
-        boolean[] seen = new boolean[10];
+        boolean[] seen = new boolean[10]; // To track seen numbers (1-9)
         for (int i = 0; i < 3; i++)
         {
             for (int j = 0; j < 3; j++)
             {
-                int num = board[boxRow * 3 + i][boxCol * 3 + j];
-                if (num <= 0 || num > 9)
+                int row = boxRow * 3 + i;
+                int col = boxCol * 3 + j;
+                int num = board[row][col];
+                if (num > 0 && num <= 9)
                 {
-                    addUniqueError(errors, "Box " + (boxRow * 3 + boxCol + 1) + " has invalid value " + num);
-                } else if (seen[num])
-                {
-                    addUniqueError(errors, "Box " + (boxRow * 3 + boxCol + 1) + " has duplicate value " + num);
-                } else
-                {
-                    seen[num] = true;
+                    if (seen[num]) {
+                        addUniqueError(errors, row, col, num);
+                    } else {
+                        seen[num] = true;
+                    }
                 }
             }
         }
     }
 
-    private void addUniqueError(List<String> errors, String error)
+    // Add a unique error to the list
+    private void addUniqueError(List<SudokuErrors> errors, int row, int column, int number)
     {
-        if (!errors.contains(error))
+        if (!errors.stream().anyMatch(e -> e.getRow() == row && e.getColumn() == column && e.getNumber() == number))
         {
-            errors.add(error);
+            errors.add(new SudokuErrors(row, column, number));
         }
     }
 }
