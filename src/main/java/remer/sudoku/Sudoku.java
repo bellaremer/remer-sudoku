@@ -8,7 +8,8 @@ public class Sudoku
     private final int[][] board;
 
     // Constructor to initialize the Sudoku board
-    public Sudoku(int[][] board) {
+    public Sudoku(int[][] board)
+    {
         if (board.length != 9 || board[0].length != 9)
         {
             throw new IllegalArgumentException("The Sudoku board must be 9 rows by 9 columns.");

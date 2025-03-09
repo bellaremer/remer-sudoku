@@ -55,7 +55,7 @@ public class SudokuTest
         };
 
         Sudoku sudoku = new Sudoku(correctBoard);
-        List<String> errors = sudoku.getErrors();
+        List<SudokuErrors> errors = sudoku.getErrors();
         assertTrue(errors.isEmpty(), "Expected no errors for the correct Sudoku board.");
     }
 }
