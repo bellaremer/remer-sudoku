@@ -86,8 +86,7 @@ public class SudokuGui
                 if (text.isEmpty())
                 {
                     allFilled = false; // Found an empty cell
-                } else
-                {
+                } else {
                     try
                     {
                         int value = Integer.parseInt(text);
