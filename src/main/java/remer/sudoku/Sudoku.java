@@ -106,11 +106,19 @@ public class Sudoku
         }
     }
 
-    // Add a unique error to the list
     private void addUniqueError(List<SudokuErrors> errors, int row, int column, int number)
     {
-        if (!errors.stream().anyMatch(e -> e.getRow() == row && e.getColumn() == column && e.getNumber() == number))
-        {
+        // Check if the error already exists in the list
+        boolean exists = false;
+        for (SudokuErrors error : errors) {
+            if (error.getRow() == row && error.getColumn() == column && error.getNumber() == number) {
+                exists = true;
+                break;
+            }
+        }
+
+        // If it doesn't exist, add the new error
+        if (!exists) {
             errors.add(new SudokuErrors(row, column, number));
         }
     }

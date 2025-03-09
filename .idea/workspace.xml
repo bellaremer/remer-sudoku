@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf6d4da1-b3b7-4577-989c-f8d18ba917ab" name="Changes" comment="" />
+    <list default="true" id="bf6d4da1-b3b7-4577-989c-f8d18ba917ab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/remer/sudoku/Sudoku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/remer/sudoku/Sudoku.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/remer/sudoku/SudokuGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/remer/sudoku/SudokuGui.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,24 +38,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.SudokuTest.executor": "Run",
-    "Gradle.SudokuTest.getErrors.executor": "Run",
-    "Gradle.remer-sudoku [:remer.sudoku.GUI.main()].executor": "Run",
-    "Gradle.remer-sudoku [:remer.sudoku.Sudoku.main()].executor": "Run",
-    "Gradle.remer-sudoku [:remer.sudoku.SudokuGui.main()].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "gui",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.SudokuTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SudokuTest.getErrors.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.remer-sudoku [:remer.sudoku.GUI.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.remer-sudoku [:remer.sudoku.Sudoku.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.remer-sudoku [:remer.sudoku.SudokuGui.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;gui&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="SudokuTest.getErrors" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -108,7 +112,8 @@
       <workItem from="1741028964163" duration="976000" />
       <workItem from="1741094378499" duration="606000" />
       <workItem from="1741096073789" duration="265000" />
-      <workItem from="1741544991243" duration="2327000" />
+      <workItem from="1741544991243" duration="2564000" />
+      <workItem from="1741554410517" duration="1514000" />
     </task>
     <servers />
   </component>

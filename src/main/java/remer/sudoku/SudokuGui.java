@@ -1,16 +1,15 @@
 package remer.sudoku;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.List;
 
 public class SudokuGui
 {
     private JFrame frame;
     private JTextField[][] cells;
-    private JButton checkButton;
 
     public SudokuGui(int[][] board)
     {
@@ -44,23 +43,30 @@ public class SudokuGui
                     cells[row][col].setText(""); // Empty cell
                 }
 
+                // Add a DocumentListener to check for errors on text change
+                cells[row][col].getDocument().addDocumentListener(new DocumentListener() {
+                    @Override
+                    public void insertUpdate(DocumentEvent e) {
+                        checkForErrors();
+                    }
+
+                    @Override
+                    public void removeUpdate(DocumentEvent e) {
+                        checkForErrors();
+                    }
+
+                    @Override
+                    public void changedUpdate(DocumentEvent e) {
+                        checkForErrors();
+                    }
+                });
+
                 gridPanel.add(cells[row][col]);
             }
         }
 
-        // Create a button to check for errors
-        checkButton = new JButton("Check for Errors");
-        checkButton.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                checkForErrors();
-            }
-        });
-
         // Add components to the frame
         frame.add(gridPanel, BorderLayout.CENTER);
-        frame.add(checkButton, BorderLayout.SOUTH);
 
         // Make the frame visible
         frame.setVisible(true);
@@ -79,7 +85,7 @@ public class SudokuGui
                 String text = cells[row][col].getText();
                 if (text.isEmpty())
                 {
-                    allFilled = false;
+                    allFilled = false; // Found an empty cell
                 } else
                 {
                     try
@@ -98,15 +104,30 @@ public class SudokuGui
             }
         }
 
+        // Only check for errors if all cells are filled
         if (allFilled)
         {
-            // Check for errors and highlight them
-            highlightErrors(new Sudoku(board).getErrors());
-        } else
+            List<SudokuErrors> errors = new Sudoku(board).getErrors();
+            if (errors.isEmpty()) {
+                // If there are no errors, the board is fully correct
+                highlightCorrectBoard();
+            } else {
+                // Check for errors and highlight them
+                highlightErrors(errors);
+            }
+        }
+        else
         {
-            JOptionPane.showMessageDialog(frame, "Please fill in all cells with numbers 1-9.",
-                    "Input Error", JOptionPane.ERROR_MESSAGE);
-            resetHighlighting();
+            resetHighlighting(); // Reset highlighting if not all filled
+        }
+    }
+
+    private void highlightCorrectBoard() {
+        // Set all cells to green if the board is correct
+        for (int row = 0; row < 9; row++) {
+            for (int col = 0; col < 9; col++) {
+                cells[row][col].setBackground(Color.GREEN); // Highlight the cell in green
+            }
         }
     }
 
@@ -130,7 +151,6 @@ public class SudokuGui
         }
     }
 
-
     public static void main(String[] args)
     {
         // Example partially completed Sudoku board
@@ -147,6 +167,6 @@ public class SudokuGui
         };
 
         // Create the Sudoku GUI
-        SwingUtilities.invokeLater(() -> new SudokuGui(board));
+        new SudokuGui(board);
     }
 }
