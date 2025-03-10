@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bf6d4da1-b3b7-4577-989c-f8d18ba917ab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/remer/sudoku/SudokuGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/remer/sudoku/SudokuGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/remer/sudoku/SudokuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/remer/sudoku/SudokuTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +111,7 @@
       <workItem from="1741094378499" duration="606000" />
       <workItem from="1741096073789" duration="265000" />
       <workItem from="1741544991243" duration="2564000" />
-      <workItem from="1741554410517" duration="2148000" />
+      <workItem from="1741554410517" duration="2853000" />
     </task>
     <servers />
   </component>

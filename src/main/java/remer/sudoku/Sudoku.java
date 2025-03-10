@@ -109,13 +109,8 @@ public class Sudoku
     private void addUniqueError(List<SudokuErrors> errors, int row, int column, int number)
     {
         // Check if the error already exists in the list
-        boolean exists = false;
-        for (SudokuErrors error : errors) {
-            if (error.getRow() == row && error.getColumn() == column && error.getNumber() == number) {
-                exists = true;
-                break;
-            }
-        }
+        SudokuErrors newError = new SudokuErrors(row, column, number);
+        boolean exists = errors.contains(newError);
 
         // If it doesn't exist, add the new error
         if (!exists) {
