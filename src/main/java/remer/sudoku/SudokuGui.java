@@ -74,7 +74,6 @@ public class SudokuGui
 
     private void checkForErrors()
     {
-        // Check if all cells are filled
         boolean allFilled = true;
         int[][] board = new int[9][9];
 
@@ -83,42 +82,42 @@ public class SudokuGui
             for (int col = 0; col < 9; col++)
             {
                 String text = cells[row][col].getText();
-                if (text.isEmpty())
-                {
+                if (text.isEmpty()) {
                     allFilled = false; // Found an empty cell
                 } else {
                     try
                     {
                         int value = Integer.parseInt(text);
-                        if (value < 1 || value > 9)
-                        {
+                        if (value < 1 || value > 9) {
                             allFilled = false; // Invalid value
+                            showError("Value must be between 1 and 9.");
                         }
                         board[row][col] = value;
-                    } catch (NumberFormatException ex)
-                    {
+                    } catch (NumberFormatException ex) {
                         allFilled = false; // Not a valid number
+                        showError("Please enter a valid number.");
                     }
                 }
             }
         }
 
-        // Only check for errors if all cells are filled
         if (allFilled)
         {
             List<SudokuErrors> errors = new Sudoku(board).getErrors();
-            if (errors.isEmpty()) {
-                // If there are no errors, the board is fully correct
+            if (errors.isEmpty())
+            {
                 highlightCorrectBoard();
             } else {
-                // Check for errors and highlight them
                 highlightErrors(errors);
             }
-        }
-        else
-        {
+        } else {
             resetHighlighting(); // Reset highlighting if not all filled
         }
+    }
+
+    private void showError(String message)
+    {
+        JOptionPane.showMessageDialog(frame, message, "Input Error", JOptionPane.ERROR_MESSAGE);
     }
 
     private void highlightCorrectBoard() {
