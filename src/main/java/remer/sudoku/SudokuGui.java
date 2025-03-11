@@ -82,7 +82,8 @@ public class SudokuGui
             for (int col = 0; col < 9; col++)
             {
                 String text = cells[row][col].getText();
-                if (text.isEmpty()) {
+                if (text.isEmpty())
+                {
                     allFilled = false; // Found an empty cell
                 } else {
                     try

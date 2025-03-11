@@ -1,7 +1,6 @@
 package remer.sudoku;
 
-public class SudokuErrors
-{
+public class SudokuErrors {
     private final int row;
     private final int column;
     private final int number;
@@ -12,24 +11,21 @@ public class SudokuErrors
         this.number = number;
     }
 
-    public int getRow()
-    {
+    public int getRow() {
         return row;
     }
 
-    public int getColumn()
-    {
+    public int getColumn() {
         return column;
     }
 
-    public int getNumber()
-    {
+    public int getNumber() {
         return number;
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "Error: Number " + number + " in Row " + (row + 1) + ", Column " + (column + 1);
     }
+
 }
