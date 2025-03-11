@@ -44,7 +44,8 @@ public class SudokuGui
                 }
 
                 // Add a DocumentListener to check for errors on text change
-                cells[row][col].getDocument().addDocumentListener(new DocumentListener() {
+                cells[row][col].getDocument().addDocumentListener(new DocumentListener()
+                {
                     @Override
                     public void insertUpdate(DocumentEvent e) {
                         checkForErrors();
@@ -121,30 +122,38 @@ public class SudokuGui
         JOptionPane.showMessageDialog(frame, message, "Input Error", JOptionPane.ERROR_MESSAGE);
     }
 
-    private void highlightCorrectBoard() {
+    private void highlightCorrectBoard()
+    {
         // Set all cells to green if the board is correct
-        for (int row = 0; row < 9; row++) {
-            for (int col = 0; col < 9; col++) {
+        for (int row = 0; row < 9; row++)
+        {
+            for (int col = 0; col < 9; col++)
+            {
                 cells[row][col].setBackground(Color.GREEN); // Highlight the cell in green
             }
         }
     }
 
-    private void highlightErrors(List<SudokuErrors> errors) {
+    private void highlightErrors(List<SudokuErrors> errors)
+    {
         // Reset all cell backgrounds to white
         resetHighlighting();
 
         // Highlight cells with errors
-        for (SudokuErrors error : errors) {
+        for (SudokuErrors error : errors)
+        {
             int row = error.getRow();
             int col = error.getColumn();
             cells[row][col].setBackground(Color.RED); // Highlight the cell in red
         }
     }
 
-    private void resetHighlighting() {
-        for (int row = 0; row < 9; row++) {
-            for (int col = 0; col < 9; col++) {
+    private void resetHighlighting()
+    {
+        for (int row = 0; row < 9; row++)
+        {
+            for (int col = 0; col < 9; col++)
+            {
                 cells[row][col].setBackground(Color.WHITE); // Reset background color
             }
         }

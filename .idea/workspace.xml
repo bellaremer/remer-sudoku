@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/remer/sudoku/Sudoku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/remer/sudoku/Sudoku.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/remer/sudoku/SudokuErrors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/remer/sudoku/SudokuErrors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/remer/sudoku/SudokuGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/remer/sudoku/SudokuGui.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +117,8 @@
       <workItem from="1741619040612" duration="1493000" />
       <workItem from="1741702964577" duration="502000" />
       <workItem from="1741707602984" duration="1672000" />
+      <workItem from="1741709861522" duration="128000" />
+      <workItem from="1741717059927" duration="697000" />
     </task>
     <servers />
   </component>

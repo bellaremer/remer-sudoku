@@ -1,5 +1,7 @@
 package remer.sudoku;
 
+import java.util.Arrays;
+
 public class SudokuErrors {
     private final int row;
     private final int column;
@@ -28,4 +30,28 @@ public class SudokuErrors {
         return "Error: Number " + number + " in Row " + (row + 1) + ", Column " + (column + 1);
     }
 
+    // add these in to make the list.contains() work
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+        {
+            return true;
+        }
+
+        if (!(obj instanceof SudokuErrors that))
+        {
+            return false;
+        }
+
+        return row == that.row && column == that.column && number == that.number;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Arrays.hashCode(new int[]{row, column, number});
+    }
+
 }
+
