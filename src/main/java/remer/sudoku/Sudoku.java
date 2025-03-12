@@ -17,9 +17,9 @@ public class Sudoku {
     }
 
     // Method to get a list of errors in the Sudoku board
-    public List<SudokuErrors> getErrors()
+    public List<SudokuError> getErrors()
     {
-        List<SudokuErrors> errors = new ArrayList<>();
+        List<SudokuError> errors = new ArrayList<>();
         checkRowDuplicates(errors);
         checkColumnDuplicates(errors);
         checkBoxDuplicates(errors);
@@ -27,7 +27,7 @@ public class Sudoku {
     }
 
     // Check for duplicates in each row
-    private void checkRowDuplicates(List<SudokuErrors> errors)
+    private void checkRowDuplicates(List<SudokuError> errors)
     {
         for (int i = 0; i < 9; i++)
         {
@@ -49,7 +49,7 @@ public class Sudoku {
     }
 
     // Check for duplicates in each column
-    private void checkColumnDuplicates(List<SudokuErrors> errors)
+    private void checkColumnDuplicates(List<SudokuError> errors)
     {
         for (int i = 0; i < 9; i++) {
             boolean[] seen = new boolean[10]; // To track seen numbers (1-9)
@@ -70,7 +70,7 @@ public class Sudoku {
     }
 
     // Check for duplicates in each 3x3 box
-    private void checkBoxDuplicates(List<SudokuErrors> errors)
+    private void checkBoxDuplicates(List<SudokuError> errors)
     {
         for (int boxRow = 0; boxRow < 3; boxRow++)
         {
@@ -82,7 +82,7 @@ public class Sudoku {
     }
 
     // Check for duplicates in a specific 3x3 box
-    private void checkSquareDuplicates(int boxRow, int boxCol, List<SudokuErrors> errors)
+    private void checkSquareDuplicates(int boxRow, int boxCol, List<SudokuError> errors)
     {
         boolean[] seen = new boolean[10]; // To track seen numbers (1-9)
         for (int i = 0; i < 3; i++)
@@ -106,9 +106,9 @@ public class Sudoku {
     }
 
     // Add a unique error to the list, ensuring no duplicates
-    private void addUniqueError(List<SudokuErrors> errors, int row, int column, int number)
+    private void addUniqueError(List<SudokuError> errors, int row, int column, int number)
     {
-        SudokuErrors newError = new SudokuErrors(row, column, number);
+        SudokuError newError = new SudokuError(row, column, number);
 
         // Check if the error already exists in the list
         if (!errors.contains(newError))

@@ -25,14 +25,14 @@ public class SudokuTest
         };
 
         Sudoku sudokuWithErrors = new Sudoku(exampleBoardWithErrors);
-        List<SudokuErrors> errors = sudokuWithErrors.getErrors();
+        List<SudokuError> errors = sudokuWithErrors.getErrors();
 
         // Assert the number of errors
         assertEquals(2, errors.size(), "Expected 2 errors for the provided Sudoku board.");
 
         // Assert specific errors
-        assertTrue(errors.contains(new SudokuErrors(7, 2, 2)), "Expected error for duplicate 2 in row 8, column 3.");
-        assertTrue(errors.contains(new SudokuErrors(8, 8, 8)), "Expected error for duplicate 8 in row 9, column 9.");
+        assertTrue(errors.contains(new SudokuError(7, 2, 2)), "Expected error for duplicate 2 in row 8, column 3.");
+        assertTrue(errors.contains(new SudokuError(8, 8, 8)), "Expected error for duplicate 8 in row 9, column 9.");
     }
 
     @Test
@@ -51,7 +51,7 @@ public class SudokuTest
         };
 
         Sudoku sudoku = new Sudoku(correctBoard);
-        List<SudokuErrors> errors = sudoku.getErrors();
+        List<SudokuError> errors = sudoku.getErrors();
         assertTrue(errors.isEmpty(), "Expected no errors for the correct Sudoku board.");
     }
 }

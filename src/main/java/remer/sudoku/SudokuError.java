@@ -2,12 +2,13 @@ package remer.sudoku;
 
 import java.util.Arrays;
 
-public class SudokuErrors {
+public class SudokuError
+{
     private final int row;
     private final int column;
     private final int number;
 
-    public SudokuErrors(int row, int column, int number) {
+    public SudokuError(int row, int column, int number) {
         this.row = row;
         this.column = column;
         this.number = number;
@@ -39,7 +40,7 @@ public class SudokuErrors {
             return true;
         }
 
-        if (!(obj instanceof SudokuErrors that))
+        if (!(obj instanceof SudokuError that))
         {
             return false;
         }

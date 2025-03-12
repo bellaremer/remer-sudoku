@@ -105,7 +105,7 @@ public class SudokuGui
 
         if (allFilled)
         {
-            List<SudokuErrors> errors = new Sudoku(board).getErrors();
+            List<SudokuError> errors = new Sudoku(board).getErrors();
             if (errors.isEmpty())
             {
                 highlightCorrectBoard();
@@ -134,13 +134,13 @@ public class SudokuGui
         }
     }
 
-    private void highlightErrors(List<SudokuErrors> errors)
+    private void highlightErrors(List<SudokuError> errors)
     {
         // Reset all cell backgrounds to white
         resetHighlighting();
 
         // Highlight cells with errors
-        for (SudokuErrors error : errors)
+        for (SudokuError error : errors)
         {
             int row = error.getRow();
             int col = error.getColumn();
