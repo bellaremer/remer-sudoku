@@ -20,8 +20,8 @@ public class SudokuTest
                 {4, 2, 6, 8, 5, 3, 7, 9, 1}, // No change
                 {7, 1, 3, 9, 2, 4, 8, 5, 6}, // No change
                 {9, 6, 1, 5, 3, 7, 2, 8, 4}, // No change
-                {2, 8, 2, 4, 1, 9, 6, 3, 5}, // Error: Duplicate 2 in row
-                {3, 4, 5, 2, 8, 6, 1, 7, 8}  // Error: Duplicate 8 in row
+                {2, 8, 2, 4, 1, 9, 6, 3, 5}, // Error: Duplicate 2 in row 8, column 2
+                {3, 4, 5, 2, 8, 6, 1, 7, 8}  // Error: Duplicate 8 in row 9, column 9
         };
 
         Sudoku sudokuWithErrors = new Sudoku(exampleBoardWithErrors);
@@ -30,6 +30,9 @@ public class SudokuTest
         // Assert the number of errors
         assertEquals(2, errors.size(), "Expected 2 errors for the provided Sudoku board.");
 
+        // Assert specific errors
+        assertTrue(errors.contains(new SudokuErrors(7, 2, 2)), "Expected error for duplicate 2 in row 8, column 3.");
+        assertTrue(errors.contains(new SudokuErrors(8, 8, 8)), "Expected error for duplicate 8 in row 9, column 9.");
     }
 
     @Test
