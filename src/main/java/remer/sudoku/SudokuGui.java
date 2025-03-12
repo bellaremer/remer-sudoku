@@ -142,8 +142,8 @@ public class SudokuGui
         // Highlight cells with errors
         for (SudokuError error : errors)
         {
-            int row = error.getRow();
-            int col = error.getColumn();
+            int row = error.row();
+            int col = error.col();
             cells[row][col].setBackground(Color.RED); // Highlight the cell in red
         }
     }
