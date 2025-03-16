@@ -10,6 +10,7 @@ public class SudokuGui
 {
     private JFrame frame;
     private JTextField[][] cells;
+    private SudokuController controller;
 
     public SudokuGui(int[][] board)
     {
@@ -69,8 +70,26 @@ public class SudokuGui
         // Add components to the frame
         frame.add(gridPanel, BorderLayout.CENTER);
 
+        // Initialize controller
+        controller = new SudokuController(this, board);
+
         // Make the frame visible
         frame.setVisible(true);
+    }
+
+    // method to get the current boards state from the GUI
+    public int[][] getCurrentBoard()
+    {
+        int[][] board = new int[9][9];
+        for (int row = 0; row < 9; row++)
+        {
+            for (int col = 0; col < 9; col++)
+            {
+                String test = cells[row][col].getText();
+                board[row][col] = Integer.parseInt(test);
+            }
+        }
+        return board;
     }
 
     private void checkForErrors()
@@ -122,7 +141,7 @@ public class SudokuGui
         JOptionPane.showMessageDialog(frame, message, "Input Error", JOptionPane.ERROR_MESSAGE);
     }
 
-    private void highlightCorrectBoard()
+    void highlightCorrectBoard()
     {
         // Set all cells to green if the board is correct
         for (int row = 0; row < 9; row++)
@@ -134,7 +153,7 @@ public class SudokuGui
         }
     }
 
-    private void highlightErrors(List<SudokuError> errors)
+    void highlightErrors(List<SudokuError> errors)
     {
         // Reset all cell backgrounds to white
         resetHighlighting();
