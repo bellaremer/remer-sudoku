@@ -44,26 +44,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.SudokuTest.correctBoard.executor": "Run",
-    "Gradle.SudokuTest.executor": "Run",
-    "Gradle.SudokuTest.getErrors.executor": "Run",
-    "Gradle.remer-sudoku [:remer.sudoku.GUI.main()].executor": "Run",
-    "Gradle.remer-sudoku [:remer.sudoku.Sudoku.main()].executor": "Run",
-    "Gradle.remer-sudoku [:remer.sudoku.SudokuGui.main()].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "controller",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.SudokuTest.correctBoard.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SudokuTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SudokuTest.getErrors.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.remer-sudoku [:remer.sudoku.GUI.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.remer-sudoku [:remer.sudoku.Sudoku.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.remer-sudoku [:remer.sudoku.SudokuGui.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;controller&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Gradle.SudokuTest.correctBoard">
+}</component>
+  <component name="RunManager" selected="Application.SudokuGui">
     <configuration name="SudokuGui" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="remer.sudoku.SudokuGui" />
       <module name="remer-sudoku.main" />
@@ -127,8 +127,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.SudokuTest.correctBoard" />
         <item itemvalue="Gradle.SudokuTest.getErrors" />
+        <item itemvalue="Gradle.SudokuTest.correctBoard" />
         <item itemvalue="Application.SudokuGui" />
       </list>
     </recent_temporary>
@@ -167,6 +167,7 @@
       <workItem from="1741717059927" duration="1433000" />
       <workItem from="1741781798048" duration="322000" />
       <workItem from="1742148103615" duration="1104000" />
+      <workItem from="1742215539493" duration="1690000" />
     </task>
     <servers />
   </component>

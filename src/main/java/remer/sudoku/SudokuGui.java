@@ -124,15 +124,9 @@ public class SudokuGui
 
         if (allFilled)
         {
-            List<SudokuError> errors = new Sudoku(board).getErrors();
-            if (errors.isEmpty())
-            {
-                highlightCorrectBoard();
-            } else {
-                highlightErrors(errors);
-            }
+            controller.validateBoard();     // call the validateBoard method to check for errors
         } else {
-            resetHighlighting(); // Reset highlighting if not all filled
+            resetHighlighting();
         }
     }
 

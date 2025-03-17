@@ -16,6 +16,21 @@ public class Sudoku {
         this.board = board;
     }
 
+    public void updateBoard(int[][] newBoard)
+    {
+        if (newBoard.length != 9 || newBoard[0].length != 9)
+        {
+            throw new IllegalArgumentException("The Sudoku board must be 9 rows by 9 columns.");
+        }
+        for (int i = 0; i < 9; i++)
+        {
+            for (int j = 0; j < 9; j++)
+            {
+                this.board[i][j] = newBoard[i][j];
+            }
+        }
+    }
+
     // Method to get a list of errors in the Sudoku board
     public List<SudokuError> getErrors()
     {
@@ -116,4 +131,5 @@ public class Sudoku {
             errors.add(newError);
         }
     }
+
 }

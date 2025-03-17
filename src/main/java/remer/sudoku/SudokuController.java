@@ -12,13 +12,13 @@ public class SudokuController
     public SudokuController(JTextField[][] cells, int[][] initialBoard)
     {
         this.cells = cells;     // initialize with the JTextFields
-        this.sudoku = new Sudoku(initialBoard);
     }
 
     // Method to validate the current board and update the GUI
     public void validateBoard()
     {
         int[][] currentBoard = getCurrentBoard();
+        sudoku.updateBoard(currentBoard);
         List<SudokuError> errors = new Sudoku(currentBoard).getErrors();    // validate the board
 
         if (errors.isEmpty())
