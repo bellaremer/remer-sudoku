@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sudoku {
-    private final int[][] board;
+    private int[][] board;
 
     // Constructor to initialize the Sudoku board
     public Sudoku(int[][] board)
@@ -26,7 +26,7 @@ public class Sudoku {
         {
             for (int j = 0; j < 9; j++)
             {
-                this.board[i][j] = newBoard[i][j];
+                board = newBoard;
             }
         }
     }

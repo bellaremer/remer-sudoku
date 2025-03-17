@@ -1,6 +1,7 @@
 package remer.sudoku;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JTextField;
 
@@ -16,12 +17,18 @@ public class SudokuController
     }
 
     // Method to validate the current board and update the GUI
-    public List<SudokuError> validateBoard()
+    public void validateBoard()
     {
         int[][] currentBoard = getCurrentBoard();
         sudoku.updateBoard(currentBoard);
-        sudoku.getErrors();
-        return sudoku.getErrors();  // return list of errors
+        List<SudokuError> errors = sudoku.getErrors();
+
+        if (errors.isEmpty())
+        {
+            highlightCorrectBoard();
+        } else {
+            highlightErrors(errors);
+        }
     }
 
     private int[][] getCurrentBoard()
@@ -47,5 +54,41 @@ public class SudokuController
             }
         }
         return board;
+    }
+
+    private void highlightCorrectBoard()
+    {
+        // set the cells to green if the board is correct
+        for (int row = 0; row < 9; row++)
+        {
+            for (int col = 0; col < 9; col++)
+            {
+                cells[row][col].setBackground(Color.GREEN);
+            }
+        }
+    }
+
+    private void highlightErrors(List<SudokuError> errors)
+    {
+        resetHighlighting();
+
+        // Highlight the cells with errors
+        for (SudokuError error : errors)
+        {
+            int row = error.row();
+            int col = error.col();
+            cells[row][col].setBackground(Color.RED);
+        }
+    }
+
+    void resetHighlighting()
+    {
+        for (int row = 0; row < 9; row++)
+        {
+            for (int col = 0; col < 9; col++)
+            {
+                cells[row][col].setBackground(Color.WHITE);
+            }
+        }
     }
 }

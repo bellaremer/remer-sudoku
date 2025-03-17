@@ -4,7 +4,7 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
-import java.util.List;
+
 
 public class SudokuGui
 {
@@ -77,25 +77,9 @@ public class SudokuGui
         frame.setVisible(true);
     }
 
-    // method to get the current boards state from the GUI
-    public int[][] getCurrentBoard()
-    {
-        int[][] board = new int[9][9];
-        for (int row = 0; row < 9; row++)
-        {
-            for (int col = 0; col < 9; col++)
-            {
-                String test = cells[row][col].getText();
-                board[row][col] = Integer.parseInt(test);
-            }
-        }
-        return board;
-    }
-
     private void checkForErrors()
     {
         boolean allFilled = true;
-        int[][] board = new int[9][9];
 
         for (int row = 0; row < 9; row++)
         {
@@ -113,7 +97,6 @@ public class SudokuGui
                             allFilled = false; // Invalid value
                             showError("Value must be between 1 and 9.");
                         }
-                        board[row][col] = value;
                     } catch (NumberFormatException ex) {
                         allFilled = false; // Not a valid number
                         showError("Please enter a valid number.");
@@ -124,58 +107,15 @@ public class SudokuGui
 
         if (allFilled)
         {
-            List<SudokuError> errors = controller.validateBoard();
-            if (errors.isEmpty())
-            {
-                highlightCorrectBoard();
-            } else {
-                highlightErrors(errors);
-            }
+            controller.validateBoard();
         } else {
-            resetHighlighting();
+            controller.resetHighlighting();
         }
     }
 
     private void showError(String message)
     {
         JOptionPane.showMessageDialog(frame, message, "Input Error", JOptionPane.ERROR_MESSAGE);
-    }
-
-    public void highlightCorrectBoard()
-    {
-        // Set all cells to green if the board is correct
-        for (int row = 0; row < 9; row++)
-        {
-            for (int col = 0; col < 9; col++)
-            {
-                cells[row][col].setBackground(Color.GREEN); // Highlight the cell in green
-            }
-        }
-    }
-
-    void highlightErrors(List<SudokuError> errors)
-    {
-        // Reset all cell backgrounds to white
-        resetHighlighting();
-
-        // Highlight cells with errors
-        for (SudokuError error : errors)
-        {
-            int row = error.row();
-            int col = error.col();
-            cells[row][col].setBackground(Color.RED); // Highlight the cell in red
-        }
-    }
-
-    private void resetHighlighting()
-    {
-        for (int row = 0; row < 9; row++)
-        {
-            for (int col = 0; col < 9; col++)
-            {
-                cells[row][col].setBackground(Color.WHITE); // Reset background color
-            }
-        }
     }
 
     public static void main(String[] args)
