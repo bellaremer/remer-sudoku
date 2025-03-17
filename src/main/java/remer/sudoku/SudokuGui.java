@@ -124,7 +124,13 @@ public class SudokuGui
 
         if (allFilled)
         {
-            controller.validateBoard();     // call the validateBoard method to check for errors
+            List<SudokuError> errors = controller.validateBoard();
+            if (errors.isEmpty())
+            {
+                highlightCorrectBoard();
+            } else {
+                highlightErrors(errors);
+            }
         } else {
             resetHighlighting();
         }
@@ -135,7 +141,7 @@ public class SudokuGui
         JOptionPane.showMessageDialog(frame, message, "Input Error", JOptionPane.ERROR_MESSAGE);
     }
 
-    void highlightCorrectBoard()
+    public void highlightCorrectBoard()
     {
         // Set all cells to green if the board is correct
         for (int row = 0; row < 9; row++)
