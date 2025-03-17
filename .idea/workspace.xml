@@ -46,13 +46,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.SudokuTest.correctBoard.executor": "Run",
     "Gradle.SudokuTest.executor": "Run",
     "Gradle.SudokuTest.getErrors.executor": "Run",
     "Gradle.remer-sudoku [:remer.sudoku.GUI.main()].executor": "Run",
     "Gradle.remer-sudoku [:remer.sudoku.Sudoku.main()].executor": "Run",
     "Gradle.remer-sudoku [:remer.sudoku.SudokuGui.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "record",
+    "git-widget-placeholder": "controller",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -62,7 +63,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.SudokuTest.getErrors">
+  <component name="RunManager" selected="Gradle.SudokuTest.correctBoard">
     <configuration name="SudokuGui" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="remer.sudoku.SudokuGui" />
       <module name="remer-sudoku.main" />
@@ -75,6 +76,30 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="SudokuTest.correctBoard" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;remer.sudoku.SudokuTest.correctBoard&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
     </configuration>
     <configuration name="SudokuTest.getErrors" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -102,6 +127,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.SudokuTest.correctBoard" />
         <item itemvalue="Gradle.SudokuTest.getErrors" />
         <item itemvalue="Application.SudokuGui" />
       </list>
@@ -140,6 +166,7 @@
       <workItem from="1741709861522" duration="128000" />
       <workItem from="1741717059927" duration="1433000" />
       <workItem from="1741781798048" duration="322000" />
+      <workItem from="1742148103615" duration="1104000" />
     </task>
     <servers />
   </component>

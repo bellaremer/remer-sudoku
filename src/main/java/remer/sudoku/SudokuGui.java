@@ -71,7 +71,7 @@ public class SudokuGui
         frame.add(gridPanel, BorderLayout.CENTER);
 
         // Initialize controller
-        controller = new SudokuController(this, board);
+        controller = new SudokuController(cells, board);
 
         // Make the frame visible
         frame.setVisible(true);
