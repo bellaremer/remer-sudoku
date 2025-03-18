@@ -22,13 +22,7 @@ public class Sudoku {
         {
             throw new IllegalArgumentException("The Sudoku board must be 9 rows by 9 columns.");
         }
-        for (int i = 0; i < 9; i++)
-        {
-            for (int j = 0; j < 9; j++)
-            {
-                board[i][j] = newBoard[i][j];
-            }
-        }
+        board = newBoard;
     }
 
     // Method to get a list of errors in the Sudoku board
