@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf6d4da1-b3b7-4577-989c-f8d18ba917ab" name="Changes" comment="" />
+    <list default="true" id="bf6d4da1-b3b7-4577-989c-f8d18ba917ab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +16,16 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -36,13 +48,14 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Gradle.SudokuTest.correctBoard.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.SudokuTest.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.SudokuTest.getErrors.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.remer-sudoku [:remer.sudoku.GUI.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.remer-sudoku [:remer.sudoku.Sudoku.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.remer-sudoku [:remer.sudoku.SudokuGui.main()].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;gui&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;controller&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -52,7 +65,44 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SudokuGui">
+    <configuration name="SudokuGui" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="remer.sudoku.SudokuGui" />
+      <module name="remer-sudoku.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="remer.sudoku.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SudokuTest.correctBoard" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;remer.sudoku.SudokuTest.correctBoard&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="SudokuTest.getErrors" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -80,6 +130,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.SudokuTest.getErrors" />
+        <item itemvalue="Gradle.SudokuTest.correctBoard" />
+        <item itemvalue="Application.SudokuGui" />
       </list>
     </recent_temporary>
   </component>
@@ -116,6 +168,13 @@
       <workItem from="1741709861522" duration="128000" />
       <workItem from="1741717059927" duration="1433000" />
       <workItem from="1741781798048" duration="322000" />
+      <workItem from="1742148103615" duration="1104000" />
+      <workItem from="1742215539493" duration="1690000" />
+      <workItem from="1742220905478" duration="688000" />
+      <workItem from="1742228873369" duration="1239000" />
+      <workItem from="1742235095150" duration="896000" />
+      <workItem from="1742248652751" duration="89000" />
+      <workItem from="1742257427099" duration="404000" />
     </task>
     <servers />
   </component>

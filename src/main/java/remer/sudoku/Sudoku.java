@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sudoku {
-    private final int[][] board;
+    private int[][] board;
 
     // Constructor to initialize the Sudoku board
     public Sudoku(int[][] board)
@@ -14,6 +14,15 @@ public class Sudoku {
             throw new IllegalArgumentException("The Sudoku board must be 9 rows by 9 columns.");
         }
         this.board = board;
+    }
+
+    public void updateBoard(int[][] newBoard)
+    {
+        if (newBoard.length != 9 || newBoard[0].length != 9)
+        {
+            throw new IllegalArgumentException("The Sudoku board must be 9 rows by 9 columns.");
+        }
+        board = newBoard;
     }
 
     // Method to get a list of errors in the Sudoku board
@@ -116,4 +125,5 @@ public class Sudoku {
             errors.add(newError);
         }
     }
+
 }
