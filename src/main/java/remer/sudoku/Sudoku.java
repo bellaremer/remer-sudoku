@@ -26,7 +26,7 @@ public class Sudoku {
         {
             for (int j = 0; j < 9; j++)
             {
-                board = newBoard;
+                board[i][j] = newBoard[i][j];
             }
         }
     }
